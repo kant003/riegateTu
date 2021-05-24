@@ -27,23 +27,36 @@ void setup() {
  lcd.setCursor(0,0);
 }
 
-void loop() {
-  int SensorValue = analogRead(humedadSuelo);
-
-  humedad = dht.readHumidity();
-  temp = dht.readTemperature();
-
+float mostrarHumedad{
   lcd.clear();
 
-  Serial.print("Temperatura: ");
-  Serial.print(temp);
-  Serial.println("ºC"); 
+ humedad = dht.readHumidity();
 
   Serial.print("Humedad: ");
   Serial.print(humedad);
   Serial.println("%");
 
+  delay(500);
+}
+
+float mostrarTemperatura{
+  lcd.clear();
+
+  temp = dht.readTemperature();
+
+  Serial.print("Temperatura: ");
+  Serial.print(temp);
+  Serial.println("ºC"); 
+
+  delay(500);
+}
+
+float mostrarHumedadSuelo{
+  lcd.clear();
+  int SensorValue = analogRead(humedadSuelo);
+
   Serial.print("Humedad del suelo: ");
   Serial.print(SensorValue);
   Serial.println("%");
   delay(500);
+}
