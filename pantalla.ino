@@ -10,9 +10,6 @@ int SENSOR = 2;
 DHT dht(SENSOR, DHT11);
 LiquidCrystal lcd(4,5,6,7,8,9);
 
-int temp;
-int humedad;
-
 void setup() {
  dht.begin();
  lcd.begin(16, 2);
@@ -26,36 +23,26 @@ void setup() {
  lcd.setCursor(0,0);
 }
 
-float mostrarHumedad{
+float mostrarHumedad(float humedad){
   lcd.clear();
-
- humedad = dht.readHumidity();
-
   lcd.print("Humedad: ");
   lcd.print(humedad);
   lcd.println("%");
-
   delay(500);
 }
 
-float mostrarTemperatura{
+float mostrarTemperatura(float temp){
   lcd.clear();
-
-  temp = dht.readTemperature();
-
   lcd.print("Temperatura: ");
   lcd.print(temp);
   lcd.println("ºC"); 
-
   delay(500);
 }
 
-float mostrarHumedadSuelo{
+float mostrarHumedadSuelo(float humedadSuelo){
   lcd.clear();
-  int SensorValue = analogRead(humedadSuelo);
-
   lcd.print("Humedad del suelo: ");
-  lcd.print(SensorValue);
+  lcd.print(humedadSuelo);
   lcd.println("%");
   delay(500);
 }
