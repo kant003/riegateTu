@@ -14,7 +14,6 @@ int temp;
 int humedad;
 
 void setup() {
- Serial.begin(9600);
  dht.begin();
  lcd.begin(16, 2);
  analogWrite(V0, 50)
@@ -32,9 +31,9 @@ float mostrarHumedad{
 
  humedad = dht.readHumidity();
 
-  Serial.print("Humedad: ");
-  Serial.print(humedad);
-  Serial.println("%");
+  lcd.print("Humedad: ");
+  lcd.print(humedad);
+  lcd.println("%");
 
   delay(500);
 }
@@ -44,9 +43,9 @@ float mostrarTemperatura{
 
   temp = dht.readTemperature();
 
-  Serial.print("Temperatura: ");
-  Serial.print(temp);
-  Serial.println("ºC"); 
+  lcd.print("Temperatura: ");
+  lcd.print(temp);
+  lcd.println("ºC"); 
 
   delay(500);
 }
@@ -55,8 +54,8 @@ float mostrarHumedadSuelo{
   lcd.clear();
   int SensorValue = analogRead(humedadSuelo);
 
-  Serial.print("Humedad del suelo: ");
-  Serial.print(SensorValue);
-  Serial.println("%");
+  lcd.print("Humedad del suelo: ");
+  lcd.print(SensorValue);
+  lcd.println("%");
   delay(500);
 }
