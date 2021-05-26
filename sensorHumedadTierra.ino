@@ -1,10 +1,12 @@
 const int sensorPin = A0;
-
+int getHumedadSuelo;
 void setup() {
   Serial.begin(9600);
 }
 
 void loop() {
-  int getHumedadSuelo = analogRead(sensorPin);
+ 
+  getHumedadSuelo = analogRead(sensorPin);
+  return getHumedadSuelo;
  
 }
