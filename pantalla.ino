@@ -23,7 +23,7 @@ void setup() {
  lcd.setCursor(0,0);
 }
 
-float mostrarHumedad(float humedad){
+float mostrarHumedad(float humedad) {
   lcd.clear();
   lcd.print("Humedad: ");
   lcd.print(humedad);
@@ -31,7 +31,7 @@ float mostrarHumedad(float humedad){
   delay(500);
 }
 
-float mostrarTemperatura(float temp){
+float mostrarTemperatura(float temp) {
   lcd.clear();
   lcd.print("Temperatura: ");
   lcd.print(temp);
@@ -39,7 +39,7 @@ float mostrarTemperatura(float temp){
   delay(500);
 }
 
-float mostrarHumedadSuelo(float humedadSuelo){
+float mostrarHumedadSuelo(float humedadSuelo) {
   lcd.clear();
   lcd.print("Humedad del suelo: ");
   lcd.print(humedadSuelo);
